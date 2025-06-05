@@ -1,0 +1,237 @@
+:root {
+  --primary: #4a6fff;
+  --secondary: #f3f4f6;
+  --dark: #1f2937;
+  --light: #ffffff;
+  --accent: #10b981;
+  --text-primary: #374151;
+  --text-secondary: #6b7280;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--light);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.accroche p:first-child {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.accroche p:nth-child(2) {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.accroche p:last-child {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.liste ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.liste li {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.liste li a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.liste li:hover {
+  color: var(--primary);
+}
+
+.liste li:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+.liste li:hover:after {
+  width: 100%;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  padding: 15px 20px;
+  border-radius: 0 0 20px 20px;
+  z-index: 100;
+  width: calc(100% - 40px);
+  max-width: 1160px;
+  transition: var(--transition);
+
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 3rem 0;
+}
+
+.parcours p:first-child,
+.competences p:first-child,
+.projets p:first-child,
+.contact p:first-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+div p {
+  margin-bottom: 1rem;
+}
+
+div a {
+  text-decoration: none;
+  color: var(--dark)
+}
+
+.parcours p:not(:first-child) {
+  padding: 0.75rem 1rem;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.parcours p:not(:first-child):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.competences p:not(:first-child) {
+  background-color: var(--secondary);
+  border-left: 3px solid var(--primary);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.projets p:not(:first-child) {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary);
+  border-radius: 30px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.projets p:not(:first-child):hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 2rem;
+  background-color: var(--secondary);
+  border-radius: 12px;
+}
+
+.contact {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.horizontal-separator {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 2rem 0;
+  border-radius: 1px;
+}
+
+.vertical-separator {
+  display: inline-block;
+  width: 2px;
+  height: 80px; 
+  background: #e5e7eb;
+  margin: 0 2rem;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .liste ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .accroche p:nth-child(2) {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accroche p:nth-child(2) {
+    font-size: 1.8rem;
+  }
+
+  .parcours p:first-child,
+  .competences p:first-child,
+  .projets p:first-child,
+  .contact p:first-child {
+    font-size: 1.5rem;
+  }
+}
