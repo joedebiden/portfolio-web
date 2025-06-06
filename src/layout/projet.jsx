@@ -1,7 +1,7 @@
 import Header from "./header"
 import Footer from "./footer"
 
-export default function Project() {
+export default function Projet() {
     return (
         <>
             <Header/>
@@ -13,4 +13,3 @@ export default function Project() {
         </>
     )
 }
-        
